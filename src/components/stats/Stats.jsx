@@ -2,7 +2,7 @@ import React from 'react';
 
 const Stats = () => {
     return (
-        <div className='bg-linear-to-r from-blue-600 to-purple-700 flex p-20 justify-around items-center mt-15'>
+        <div className='bg-linear-to-r from-blue-600 to-purple-700 flex p-20 justify-around items-center mt-15 text-white'>
             <div>
                 <p className='font-bold text-6xl'>50K+</p>
                 <p className='font-light text-gray-300'>Active users</p>

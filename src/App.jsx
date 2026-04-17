@@ -3,17 +3,25 @@ import NavBar from './components/navbar/NavBar'
 import './App.css'
 import Banner from './components/hero/Banner'
 import Stats from './components/stats/Stats'
+import Products from './components/products/Products'
+import { Suspense } from 'react'
 
+const fetchData = async() => {
+  const fethD = await fetch('/data.json')
+  return fethD.json();
+}
 function App() {
-
+const fetchProducts = fetchData();
   return (
     <>
     <NavBar></NavBar>
     <hr/>
     <Banner></Banner>
     <Stats></Stats>
-      <ToastContainer>
-      </ToastContainer>
+    <Suspense fallback={<span className="loading loading-bars loading-xl"></span>}>
+      <Products fetchProducts={fetchProducts}></Products>
+    </Suspense>
+    <ToastContainer></ToastContainer>
     </>
   )
 }
