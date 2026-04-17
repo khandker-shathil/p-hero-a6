@@ -37,8 +37,9 @@ const Cards = ({p2,setaddtoCart, addtoCart}) => {
                     </li>
                     ))}
                 </ul>
-                <button onClick={() => {handleProducts()}} className="btn w-full border-none rounded-full text-white font-medium bg-linear-to-r  from-blue-600 to-purple-700" disabled={btnChoose}>
-                    Buy Now
+                <button onClick={() => {handleProducts()}} 
+                className= {`btn w-full border-none rounded-full text-white font-medium ${btnChoose === true ? "bg-green-400 text-white" : "bg-linear-to-r from-blue-600 to-purple-700" } `} disabled={btnChoose}>
+                    {btnChoose ? "✅ Selected":"Buy Now"}
                 </button>
             </div>
     );
