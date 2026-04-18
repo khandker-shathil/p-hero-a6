@@ -16,7 +16,7 @@ const NavBar = ({addtoCart}) => {
                 </ul>
             </div>
             <div className='flex gap-5'>
-                <button className='relative cursor-pointer'><FontAwesomeIcon icon={faCartArrowDown} /><span className='absolute -top-2 -right-3 bg-red-500 rounded-full text-xs w-5 h-5 flex items-center justify-center'>{addtoCart.length}</span></button>
+                <button className='relative cursor-pointer'><FontAwesomeIcon icon={faCartArrowDown}/> {addtoCart.length > 0 && (<span className='absolute -top-2 -right-3 bg-red-500 rounded-full text-xs w-5 h-5 flex items-center justify-center'>{addtoCart.length}</span>)} </button>
                 <button className='btn btn-ghost rounded-full'>Login</button>
                 <button className='btn btn-primary bg-linear-to-r from-blue-600 to-purple-700 text-white rounded-4xl px-2'>Get Started</button>
             </div>
