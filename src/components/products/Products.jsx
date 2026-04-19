@@ -5,7 +5,7 @@ import Cart from './Cart';
 const Products = ({fetchProducts, addtoCart, setaddtoCart}) => {
     const [filterButton, setfilterButton] = useState('products')
     return (
-        <div className='container gap-5 mx-auto mt-20'>
+        <div className='container gap-5 mx-auto my-20'>
             <div className='flex flex-col justify-center items-center my-10 gap-5'>
                 <h1 className='font-extrabold text-5xl'>Premium Digital Tools</h1>
                 <p className='font-light text-gray-500'>Choose from our curated collection of premium digital products designed to boost your productivity and creativity.</p>

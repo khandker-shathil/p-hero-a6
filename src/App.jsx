@@ -5,6 +5,9 @@ import Banner from './components/hero/Banner'
 import Stats from './components/stats/Stats'
 import Products from './components/products/Products'
 import { Suspense, useState } from 'react'
+import ThreeSteps from './components/bottoms/ThreeSteps'
+import Pricing from './components/bottoms/Pricing'
+import Footer from './components/bottoms/Footer'
 
 const fetchData = async() => {
   const fethD = await fetch('/data.json')
@@ -22,6 +25,9 @@ const [addtoCart, setaddtoCart] = useState([]);
     <Suspense fallback={<span className="loading loading-bars loading-xl"></span>}>
       <Products fetchProducts={fetchProducts} addtoCart={addtoCart} setaddtoCart={setaddtoCart}></Products>
     </Suspense>
+    <ThreeSteps></ThreeSteps>
+    <Pricing></Pricing>
+    <Footer></Footer>
     <ToastContainer></ToastContainer>
     </>
   )
