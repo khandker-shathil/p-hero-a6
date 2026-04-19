@@ -16,14 +16,15 @@ const fetchData = async() => {
 function App() {
 const fetchProducts = fetchData();
 const [addtoCart, setaddtoCart] = useState([]);
+const [filterButton, setfilterButton] = useState('products')
   return (
     <>
-    <NavBar addtoCart={addtoCart} ></NavBar>
+    <NavBar addtoCart={addtoCart} filterButton={filterButton} setfilterButton={setfilterButton} ></NavBar>
     <hr/>
     <Banner></Banner>
     <Stats></Stats>
     <Suspense fallback={<span className="loading loading-bars loading-xl"></span>}>
-      <Products fetchProducts={fetchProducts} addtoCart={addtoCart} setaddtoCart={setaddtoCart}></Products>
+      <Products fetchProducts={fetchProducts} addtoCart={addtoCart} setaddtoCart={setaddtoCart} filterButton={filterButton} setfilterButton={setfilterButton}></Products>
     </Suspense>
     <ThreeSteps></ThreeSteps>
     <Pricing></Pricing>

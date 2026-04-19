@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 import Product from './product/Product';
 import Cart from './Cart';
 
-const Products = ({fetchProducts, addtoCart, setaddtoCart}) => {
-    const [filterButton, setfilterButton] = useState('products')
+const Products = ({fetchProducts, addtoCart, setaddtoCart,filterButton, setfilterButton}) => {
+    
     return (
         <div className='container gap-5 mx-auto my-20'>
             <div className='flex flex-col justify-center items-center my-10 gap-5'>

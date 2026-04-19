@@ -19,7 +19,7 @@ const Cart = ({addtoCart, setaddtoCart}) => {
         toast("Cart Cleared")
     }
     return (
-        <div className='flex flex-col gap-8 p-8 container border border-gray-200 rounded-2xl'>
+        <div id='cart' className='flex flex-col gap-8 p-8 container border border-gray-200 rounded-2xl'>
             <h1 className='font-bold text-3xl'>Your Cart</h1>
             <div>
                 { addtoCart.length === 0 ? <div><h1 className='font-extrabold text-4xl'>No Products Selected</h1></div> : 
