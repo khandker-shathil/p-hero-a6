@@ -4,10 +4,17 @@ import { toast } from 'react-toastify';
 const Cards = ({p2,setaddtoCart, addtoCart}) => {
     const [btnChoose, setbtnChoose] = useState(false);
     const handleProducts = () =>{
+        const exist = addtoCart.some(item => item.id === p2.id);
+
+        if (exist){
+            toast(`${p2.icon} ${p2.name} Already Exists`)
+            return;
+        } 
+
         setaddtoCart([...addtoCart, p2])
         toast(`${p2.icon } ${p2.name} Added to Cart`)
-        console.log(addtoCart);
         setbtnChoose(true)
+        
     }
     return (
             <div key={p2.id} className="max-w-sm w-full rounded-2xl border border-gray-200 p-6 bg-white shadow-sm hover:shadow-md transition">
