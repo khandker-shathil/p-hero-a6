@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Cart = ({addtoCart, setaddtoCart}) => {
     const total = () => {
@@ -12,6 +13,10 @@ const Cart = ({addtoCart, setaddtoCart}) => {
     const handleDelete = (p) => {
         const filterProducts = addtoCart.filter((addtoCart)=>p.id !== addtoCart.id);
         setaddtoCart(filterProducts);
+    }
+    const deleteAll = () =>{
+        setaddtoCart([]);
+        toast("Cart Cleared")
     }
     return (
         <div className='flex flex-col gap-8 p-8 container border border-gray-200 rounded-2xl'>
@@ -37,7 +42,7 @@ const Cart = ({addtoCart, setaddtoCart}) => {
                 <p className='text-gray-500'>Total</p>
                 <p className='font-bold text-2xl'>${total()}</p>
             </div>
-            <button className='btn rounded-full bg-linear-to-r from-blue-600 to-purple-700 text-white'>Proceed to Checkout</button>
+            <button onClick={() => {deleteAll()}} className='btn rounded-full bg-linear-to-r from-blue-600 to-purple-700 text-white'>Proceed to Checkout</button>
         </div>
     
     );
