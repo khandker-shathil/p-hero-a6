@@ -2,7 +2,7 @@ import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-const NavBar = ({addtoCart, setfilterButton}) => {
+const NavBar = ({addtoCart, setfilterButton, filterButton}) => {
     const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
     setfilterButton('cart')
